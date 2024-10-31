@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import NewTodo from './components/NewTodo'
+import TodoList from './components/TodoList'
 
 const App = () => {
 
@@ -11,11 +12,7 @@ const App = () => {
     <>
       <h1>To-do App</h1>
       <NewTodo addTodo={addTodo} /> {/* Passes addTodo function DOWNWARDS for use in the NewTodo.jsx */}
-      <ul>
-        {todos.map((todo, index) => {
-          return <li key={index}>{todo}</li>;
-        })}
-      </ul>
+      <TodoList todos={todos}/> {/* Passes todos state variable DOWNWARDS for use in TodoList.jsx*/}
     </>
   )
 
