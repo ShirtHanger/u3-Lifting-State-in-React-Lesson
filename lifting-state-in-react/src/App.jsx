@@ -1,22 +1,19 @@
 import { useState } from 'react'
 import './App.css'
-import IncrementButton from './components/IncrementButton';
+import NewTodo from './components/NewTodo'
 
 const App = () => {
 
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Hello world!</h1>
-      <p>Count: {count}</p>
-      <IncrementButton addOne={addOne} /> {/* Passing in a function as a PROP for child component */}
+      <h1>To-do App</h1>
+      <NewTodo addTodo={addTodo} /> {/* Passes addTodo function DOWNWARDS for use in the NewTodo.jsx */}
     </>
-  );
+  )
 
-  function addOne() {
-    setCount(count + 1)
+  function addTodo(newTodo) {
+    console.log(newTodo)
   }
-};
+}
 
-export default App;
+export default App
